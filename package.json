@@ -1,0 +1,8 @@
+{
+  "name": "code-generation",
+  "description": "Presentation on conde generation",
+    "dependencies": {
+    "reveal.js": "~3.5.0",
+    "reveal.js-menu": "~0.7.0"
+  }
+}

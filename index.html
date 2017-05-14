@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Code Generation</title>
+
+		<link rel="stylesheet" href="node_modules/reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="node_modules/reveal.js/css/theme/moon.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="node_modules/reveal.js/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<script defer src="node_modules/reveal.js/lib/js/head.min.js"></script>
+		<script defer src="node_modules/reveal.js/js/reveal.js"></script>
+
+		<script>
+			document.addEventListener('DOMContentLoaded', function()
+			{
+				Reveal.initialize({
+					history: true,
+					mouseWheel: true,
+					dependencies: [
+						{ src: 'node_modules/reveal.js/plugin/markdown/marked.js' },
+						{ src: 'node_modules/reveal.js/plugin/markdown/markdown.js' },
+						{ src: 'node_modules/reveal.js/plugin/notes/notes.js', async: true },
+						{ src: 'node_modules/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+						{ src: 'node_modules/reveal.js-menu/menu.js' }
+					]
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Code Generation</h1>
+					<p>Jonathon Smith</p>
+					<p>CIO</p>
+					<p>Fleet Assist</p>
+				</section>
+				<section>
+					<h2>Fleet Assist</h2>
+					<ul>
+						<li>Service provider to the contract hire, leasing and rental sector</li>
+						<li>Maintain a network of 5000 garages for a fleet of 790,000 vehicles</li>
+						<li>Book 5000 vehicles into that network through our call centre</li>
+						<li>Analyse £1.6bn in repair data</li>
+						<li>As well as lots of other services</li>
+					</ul>
+				</section>
+				<section>
+					<h2>What Is Code Generation?</h2>
+					<ul>
+						<li class="fragment">Not a compiler because there is no standard language spec</li>
+						<li class="fragment">Not reflection or metaprogaming because it is not done at runtime</li>
+						<li class="fragment">Code that writes code to a file before runtime</li>
+					</ul>
+				</section>
+				<section>
+					<h2>What Can We Use To Do It?</h2>
+					<ul>
+						<li class="fragment">
+							T4
+							<ul>
+								<li>Microsoft 'supported'</li>
+								<li>Minimal visual studio support</li>
+								<li>Hard to integrate into CI</li>
+							</ul>
+						</li>
+						<li class="fragment">
+							Scripty
+							<ul>
+								<li>Open source community supported</li>
+								<li>Ok visual studio support</li>
+								<li>Can to integrate into CI via Cake or MSBuild</li>
+							</ul>
+						</li>
+						<li class="fragment">
+							Code Smith Generator
+							<ul>
+								<li>Commercially supported</li>
+								<li>Good visual studio support</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h2>What Do I Do With It?</h2>
+					<ul>
+						<li class="fragment">Scafolding: Yeoman is at its heart a code generator</li>
+						<li class="fragment">Crossing Language Boundries</li>
+					</ul>
+				</section>
+			</div>
+		</div>
+	</body>
+</html>

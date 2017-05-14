@@ -1,0 +1,19 @@
+# Visual Studio
+.vs/
+TestResults/
+*.suo
+*.user
+*.dbmdl
+*.jfm
+*.refactorlog
+
+# Build Folders
+bin/
+obj/
+sql/
+
+# Package Managers
+packages/
+node_modules/
+tools/
+build.ps1
