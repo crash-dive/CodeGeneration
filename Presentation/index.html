@@ -28,6 +28,7 @@
             document.addEventListener('DOMContentLoaded', function()
             {
                 Reveal.initialize({
+                    center: false,
                     history: true,
                     mouseWheel: true,
                     dependencies: [
@@ -44,7 +45,7 @@
     <body>
         <div class="reveal">
             <div class="slides">
-                <section>
+                <section class="center">
                     <h1>Code Generation</h1>
                     <p>Jonathon Smith</p>
                     <p>CIO</p>
@@ -68,48 +69,18 @@
                         <li class="fragment">Code that writes code to a file before runtime</li>
                     </ul>
                 </section>
-                <section>
+                <section class="center">
                     <h2>What Can We Use To Do It?</h2>
-                    <ul>
-                        <li class="fragment">
-                            T4
-                            <ul>
-                                <li>Microsoft 'supported'</li>
-                                <li>Minimal visual studio support</li>
-                                <li>Hard to integrate into CI</li>
-                            </ul>
-                        </li>
-                        <li class="fragment">
-                            Scripty
-                            <ul>
-                                <li>Open source community supported</li>
-                                <li>Ok visual studio support</li>
-                                <li>Can to integrate into CI via Cake or MSBuild</li>
-                            </ul>
-                        </li>
-                        <li class="fragment">
-                            Code Smith Generator
-                            <ul>
-                                <li>Commercially supported</li>
-                                <li>Good visual studio support</li>
-                            </ul>
-                        </li>
-                    </ul>
                 </section>
                 <section>
-                    <h2>Scripty Example</h2>
-                    <pre>
-                        <code data-trim class="lang-csharp hljs">
-                            Output.SetFilePath("FolderToGenerateInto\FileToGenerateTo.cs");
-                            Output.BuildAction = BuildAction.GenerateOnly;
-
-                            var calculation = 10 * 10;
-                            Output.WriteLine($"const int importantNumber = {calculation};");
-                        </code>
-                        <code data-trim class="lang-csharp hljs">
-                            const int importantNumber = 100;
-                        </code>
-                    </pre>
+                    <h2>T4</h2>
+                    <ul>
+                        <li>Microsoft 'supported'</li>
+                        <li>No code highlighting unless you install third party addons</li>
+                        <li>Hard to integrate into CI because it is tightly intergrated with Visual Studio</li>
+                        <li>Classic ASP like templating support</li>
+                        <li>Not running latest versions of .NET (no string interpolation)</li>
+                    </ul>
                 </section>
                 <section>
                     <h2>T4 Example: 1</h2>
@@ -147,6 +118,42 @@
                             const int importantNumber = 100;
                         </code>
                     </pre>
+                </section>
+                <section>
+                    <h2>Scripty</h2>
+                    <ul>
+                        <li>Open source &amp; community supported</li>
+                        <li>Uses csx support for Syntax highlighting</li>
+                        <li>Can integrate into CI via Cake or MSBuild</li>
+                        <li>Provides access to the Roslyn API for the project</li>
+                        <li>No templating support</li>
+                        <li>Running latest versions of .NET which includes string interpolation</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Scripty Example</h2>
+                    <pre>
+                        <code data-trim class="lang-csharp hljs">
+                            Output.SetFilePath("FolderToGenerateInto\FileToGenerateTo.cs");
+                            Output.BuildAction = BuildAction.GenerateOnly;
+
+                            var calculation = 10 * 10;
+                            Output.WriteLine($"const int importantNumber = {calculation};");
+                        </code>
+                        <code data-trim class="lang-csharp hljs">
+                            const int importantNumber = 100;
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <h2>CodeSmith Generator</h2>
+                    <ul>
+                        <li>Closed source with commercial licences that run into the 1000s</li>
+                        <li>Classic ASP like templating support</li>
+                        <li>Can integrate into CI via MSBuild</li>
+                        <li>Supports VB.NET</li>
+                        <li>Like T4 if someone did it well</li>
+                    </ul>
                 </section>
                 <section>
                     <h2>What Do I Do With It?</h2>
