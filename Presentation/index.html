@@ -97,10 +97,78 @@
 					</ul>
 				</section>
 				<section>
+					<h2>Scripty Example</h2>
+					<pre>
+						<code data-trim class="lang-csharp hljs">
+							Output.SetFilePath("FolderToGenerateInto\FileToGenerateTo.cs");
+							Output.BuildAction = BuildAction.GenerateOnly;
+
+							var calculation = 10 * 10;
+							Output.WriteLine($"const int importantNumber = {calculation};");
+						</code>
+						<code data-trim class="lang-csharp hljs">
+							const int importantNumber = 100;
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h2>T4 Example: 1</h2>
+					<pre>
+						<code data-trim class="lang-csharp hljs">
+							<#@ template debug="false" hostspecific="true" language="C#" #>
+							<#@ assembly name="System.Core" #>
+							<#@ output extension=".cs" #>
+
+							<# 
+								var calculation = 10 * 10;
+							#>
+
+							const int importantNumber = <#= calculation #>;
+						</code>
+						<code data-trim class="lang-csharp hljs">
+							const int importantNumber = 100;
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h2>T4 Example: 2</h2>
+					<pre>
+						<code data-trim class="lang-csharp hljs">
+							<#@ template debug="false" hostspecific="true" language="C#" #>
+							<#@ assembly name="System.Core" #>
+							<#@ output extension=".cs" #>
+
+							<# 
+								var calculation = 10 * 10;
+								WriteLine("const int importantNumber = " + calculation + ";");
+							#>
+						</code>
+						<code data-trim class="lang-csharp hljs">
+							const int importantNumber = 100;
+						</code>
+					</pre>
+				</section>
+				<section>
 					<h2>What Do I Do With It?</h2>
 					<ul>
 						<li class="fragment">Scafolding: Yeoman is at its heart a code generator</li>
-						<li class="fragment">Crossing Language Boundries</li>
+						<li class="fragment">Crossing Language Boundries.....</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Linking Your DB To .NET</h2>
+					<ul>
+						<li>String length validation</li>
+						<li>ORM generation</li>
+						<li>ADO.NET stored procedure generation</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Linking Files To ASP.NET</h2>
+					<ul>
+						<li>Views</li>
+						<li>Javascript</li>
+						<li>CSS</li>
 					</ul>
 				</section>
 			</div>
